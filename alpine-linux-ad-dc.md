@@ -112,9 +112,6 @@ DNS forwarder IP address (write 'none' to disable forwarding) [seu_dns]: seu_dns
 Administrator password: escolher uma senha
 Retype password: repita a mesma senha
 ```
-```
-
-
 
 Fazer a cópia do arquivo **krb5.conf** para  o diretório **/etc** com o comando:
 
@@ -122,15 +119,15 @@ Fazer a cópia do arquivo **krb5.conf** para  o diretório **/etc** com o comand
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 ```
 
-
-
 Editar/alterar o init script do samba, copiando estes comandos e alterando no arquivo:
 
 ```
 nano /etc/init.d/samba
 ```
-
 Para apagar o conteúdo do arquivo utilizar o comando: **control+k** e copiar as linhas abaixo e então salvar:
+
+
+
 
 #!/sbin/openrc-run
 
@@ -211,9 +208,9 @@ reload() {
         done
 }
 
+```
 
 salve o arquivo
-
 
 Configurar o serviço do **samba-ad** para subir com o boot do sistema com o comando:
 
