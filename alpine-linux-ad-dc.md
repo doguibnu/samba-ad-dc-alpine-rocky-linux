@@ -3,32 +3,28 @@
 Alpine LInux é uma distro muito pequena. Sua imagem iso tem aproximadamete 140 MB. A escolha desta distro, foi pelo motivo de ser muito bem documentada e muito fácil "subir" um Controlador de domínio com ela (AD-DC). Não será abordado como baixar a imagem e como instalar. Na documentação do site da distro, tem as formas de como pode ser instalado. Opto em instalar o sistema em máquina virtual Virtualbox. 
 
 Mudar o usuário para root:
-
 ```
 su -
 ```
 
-Update e Upgrade do Alpine Linux com os comandos:
 
+Update e Upgrade do Alpine Linux com os comandos:
 ```
 apk update
 apk upgrade --available && sync
 ```
 
-Instalar os pacotes para AD-DC:
 
+Instalar os pacotes para AD-DC:
 ```
 apk add samba-dc krb5 nano
 ```
 
 Editar o arquivo **/etc/hosts**:
-
 ```
 nano /etc/hosts
 ```
-
 e adicionar a segunda linha com as informações de seu Host e IP do seu AD-DC ou seja, controlador de domínio:
-
 ```
 127.0.0.1 srvad.seu.dominio srvad localhost.localdomain localhost
 10.1.1.3 SRVAD.seu.dominio SRVAD
@@ -38,13 +34,10 @@ e adicionar a segunda linha com as informações de seu Host e IP do seu AD-DC o
 Onde:
 
 **10.1.1.3 SRVAD.seu.dominio SRVAD = IP e nome do seu Host de AD-DC**
-
 salve o arquivo
 
 
-
 Editar o arquivo:
-
 ```
  nano /etc/samba/smb.conf
 ```
@@ -67,7 +60,6 @@ Editar o arquivo:
  path = /var/lib/samba/sysvol  
  read only = No
 ```
-
 salvar o arquivo
 
 Onde:
@@ -78,31 +70,23 @@ realm = seu.domínio  = seu.domínio
 netbios name = SRVAD = nome do host de seu AD-DC
 
 
-
 Editar o arquivo :
-
 ```
 nano /etc/resolv.conf
 ```
-
 ```
 search prude.pr
 nameserver 10.1.1.3
 nameserver seu_dns
 ```
-
 salve o arquivo 
-
 OBS: o primeiro nameserver precisa **ser seu IP do seu host AD-DC**
 
 
-
 Fazer o **Provisionamento** do **Samba** com o comando:
-
 ```
 samba-tool domain provision --use-rfc2307 --interactive
 ```
-
 ```
 Realm [SEU.DOMINIO]: SEU.DOMINIO
 Domain [DOMINIO]: DOMINIO
@@ -113,17 +97,19 @@ Administrator password: escolher uma senha
 Retype password: repita a mesma senha
 ```
 
-Fazer a cópia do arquivo **krb5.conf** para  o diretório **/etc** com o comando:
 
+Fazer a cópia do arquivo **krb5.conf** para  o diretório **/etc** com o comando:
 ```
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 ```
 
-Editar/alterar o init script do samba, copiando estes comandos e alterando no arquivo:
 
+Editar/alterar o init script do samba, copiando estes comandos e alterando no arquivo:
 ```
 nano /etc/init.d/samba
 ```
+
+
 Para apagar o conteúdo do arquivo utilizar o comando: **control+k** e copiar as linhas abaixo e então salvar:
 
 ```
@@ -206,16 +192,20 @@ reload() {
         done
 }
 ```
-
 salve o arquivo
 
+
 Configurar o serviço do **samba-ad** para subir com o boot do sistema com o comando:
+```
 rc-update add samba
+```
+
 
 Restart do serviço do samba com o comando:
 ```
 rc-service samba start
 ```
+
 
 Reinicie seu Alpine Linux para agir como um Controlador de Domínio:
 ```
