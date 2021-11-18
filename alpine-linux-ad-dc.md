@@ -126,9 +126,7 @@ nano /etc/init.d/samba
 ```
 Para apagar o conteúdo do arquivo utilizar o comando: **control+k** e copiar as linhas abaixo e então salvar:
 
-
-
-
+```
 #!/sbin/openrc-run
 
 extra_started_commands="reload"
@@ -207,25 +205,19 @@ reload() {
                 eend $?
         done
 }
-
 ```
 
 salve o arquivo
 
 Configurar o serviço do **samba-ad** para subir com o boot do sistema com o comando:
-
-```
 rc-update add samba
-```
 
 Restart do serviço do samba com o comando:
-
 ```
 rc-service samba start
 ```
 
 Reinicie seu Alpine Linux para agir como um Controlador de Domínio:
-
 ```
 reboot
 ```
