@@ -132,8 +132,6 @@ nano /etc/init.d/samba
 
 Para apagar o conteúdo do arquivo utilizar o comando: **control+k** e copiar as linhas abaixo e então salvar:
 
-<div>
-```
 #!/sbin/openrc-run
 
 extra_started_commands="reload"
@@ -212,8 +210,7 @@ reload() {
                 eend $?
         done
 }
-```
-</div>
+
 
 salve o arquivo
 
