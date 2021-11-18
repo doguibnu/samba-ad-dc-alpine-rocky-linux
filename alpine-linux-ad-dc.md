@@ -211,7 +211,6 @@ reload() {
                 eend $?
         done
 }
-```
 
 salve o arquivo 
 
