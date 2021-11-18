@@ -30,11 +30,11 @@ e adicionar a segunda linha com as informações de seu Host e IP do seu AD-DC o
 10.1.1.3 SRVAD.seu.dominio SRVAD
 ::1 localhost localhost.localdomai
 ```
-
 Onde:
 
 **10.1.1.3 SRVAD.seu.dominio SRVAD = IP e nome do seu Host de AD-DC**
-salve o arquivo
+
+salvar o arquivo
 
 
 Editar o arquivo:
