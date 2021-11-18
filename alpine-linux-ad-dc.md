@@ -53,7 +53,7 @@ Editar o arquivo:
  idmap_ldb:use rfc2307 = yes
 
  [netlogon]  
- path = /var/lib/samba/sysvol/prude.pr/scripts  
+ path = /var/lib/samba/sysvol/seu_dominio/scripts  
  read only = No
 
  [sysvol]  
