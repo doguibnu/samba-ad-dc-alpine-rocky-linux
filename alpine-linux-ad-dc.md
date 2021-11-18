@@ -1,6 +1,6 @@
 ### <u>Alpine Linux como AD-DC</u>
 
-Alpine LInux é uma distro muito pequena. Sua imagem iso tem aproximadamente 140 MB. A escolha desta distro, foi pelo motivo de ser muito bem documentada e muito fácil "subir" um Controlador de domínio com ela (AD-DC). Não será abordado como baixar a imagem e como instalar. Na documentação do site da distro, tem as formas de como pode ser instalado. Opto em instalar o sistema em máquina virtual Virtualbox. 
+Alpine Linux é uma distro muito pequena. Sua imagem iso tem aproximadamente 140 MB. A escolha desta distro, foi pelo motivo de ser muito bem documentada e muito fácil "subir" um Controlador de domínio com ela (AD-DC). Não será abordado como baixar a imagem e como instalar. Na documentação do site da distro, tem as formas de como pode ser instalado. Opto em instalar o sistema em máquina virtual Virtualbox. 
 
 Mudar o usuário para root:
 ```
