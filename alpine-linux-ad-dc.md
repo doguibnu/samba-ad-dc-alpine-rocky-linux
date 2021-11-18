@@ -79,8 +79,10 @@ search prude.pr
 nameserver 10.1.1.3
 nameserver seu_dns
 ```
-salve o arquivo 
+salve o arquivo
+
 OBS: o primeiro nameserver precisa **ser seu IP do seu host AD-DC**
+
 
 
 Fazer o **Provisionamento** do **Samba** com o comando:
@@ -98,16 +100,19 @@ Retype password: repita a mesma senha
 ```
 
 
+
 Fazer a cópia do arquivo **krb5.conf** para  o diretório **/etc** com o comando:
 ```
 cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
 ```
 
 
+
 Editar/alterar o init script do samba, copiando estes comandos e alterando no arquivo:
 ```
 nano /etc/init.d/samba
 ```
+
 
 
 Para apagar o conteúdo do arquivo utilizar o comando: **control+k** e copiar as linhas abaixo e então salvar:
@@ -195,10 +200,12 @@ reload() {
 salve o arquivo
 
 
+
 Configurar o serviço do **samba-ad** para subir com o boot do sistema com o comando:
 ```
 rc-update add samba
 ```
+
 
 
 Restart do serviço do samba com o comando:
@@ -207,9 +214,11 @@ rc-service samba start
 ```
 
 
+
 Reinicie seu Alpine Linux para agir como um Controlador de Domínio:
 ```
 reboot
 ```
+
 
 Chegando até este ponto, temos então o Controlador de Domínio funcional com o Alpine Linux.
