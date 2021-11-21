@@ -1,5 +1,8 @@
 Alpine Linux como Controlador de Domínio
 Alpine Linux as Domain Controller 
+Será abordado como configurar o Alpine Linux para agir como um AD-DC (controlador de domínio)
+
 
 Rocky Linux 8 como Membro e Servidor de Arquivos
 Rocky Linux 8 as Member and File Server 
+Será abordado como configirar o Rocky Linux como um membro e servidor de Arquivos do AD.
