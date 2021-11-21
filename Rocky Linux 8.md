@@ -178,17 +178,17 @@ nano /etc/samba/smb.conf
  username map = /etc/samba/user.map
 
 #idmaps2  
- idmap config PRUDE.PR:backend = ad  
- idmap config PRUDE.PR:schema_mode = rfc2307  
- idmap config PRUDE.PR:range = 10000-999999  
- idmap config PRUDE.PR:unix_nss_info = yes
+ idmap config SEU.DOMINIO:backend = ad  
+ idmap config SEU.DOMINIO:schema_mode = rfc2307  
+ idmap config SEU.DOMINIO:range = 10000-999999  
+ idmap config SEU.DOMINIO:unix_nss_info = yes
 
 #template para login shell e diretorio home  
  template shell = /bin/bash  
  template homedir = /home/%U
 
 #unix primary group  
- idmap config PRUDE.PR:unix_primary_group = yes
+ idmap config SEU.DOMINIO:unix_primary_group = yes
 ```
 
 
