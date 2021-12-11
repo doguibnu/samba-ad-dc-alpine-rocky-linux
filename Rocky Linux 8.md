@@ -178,17 +178,17 @@ nano /etc/samba/smb.conf
  username map = /etc/samba/user.map
 
 #idmaps2  
- idmap config SEU.DOMINIO:backend = ad  
- idmap config SEU.DOMINIO:schema_mode = rfc2307  
- idmap config SEU.DOMINIO:range = 10000-999999  
- idmap config SEU.DOMINIO:unix_nss_info = yes
+ idmap config DOMINIO:backend = ad  
+ idmap config DOMINIO:schema_mode = rfc2307  
+ idmap config DOMINIO:range = 10000-999999  
+ idmap config DOMINIO:unix_nss_info = yes
 
 #template para login shell e diretorio home  
  template shell = /bin/bash  
  template homedir = /home/%U
 
 #unix primary group  
- idmap config SEU.DOMINIO:unix_primary_group = yes
+ idmap config DOMINIO:unix_primary_group = yes
 ```
 
 
@@ -238,7 +238,7 @@ wbinfo --ping-dc
 #### Verificar se o serverad volta resposta com o comando: nslookup nome__do__domínio:
 
 ```
-nslookup SRVAD.DOMINIO.BR
+nslookup SRVAD SEU.DOMINIO
 ```
 
 Por exemplo
@@ -324,7 +324,3 @@ smbcontrol all reload-config
 Através de seu Windows, logue-se com a conta Administrator onde Garantiu Direitos e através do RSAT inicie suas configurações desejadas de seu AD.
 
 Espero poder ter ajudado. Muito Obrigado
-
-
-
-
